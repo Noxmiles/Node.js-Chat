@@ -1,0 +1,108 @@
+body{
+	margin: 0;
+	padding: 0;
+	font: 16px "Helvetica neue", Helvetica, Arial, sans-serif;
+	color: #333;
+	word-break: break-word;
+}
+header, footer{
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: auto;
+	padding: 0 0.5em;
+	background-color: #011e30;
+	opacity: 0.9;
+	font-size: 24px;
+	line-height: 2em;
+	height: 2em;
+	color: #fff;
+}
+header{
+	font-weight: normal;
+}
+header > a:last-child{
+	float: right;
+	color: #fff;
+	font-weight: normal;
+}
+footer{
+	top: auto;
+	bottom: 0;
+}
+input{
+	height: 1.5em;
+	font-size: 14px;
+}
+#content{
+	margin: 50px 0.5em;
+	padding-left: 1em;
+	padding-right: 1em;
+	list-style: none;
+}
+ip{
+	display: block;
+	position: fixed;
+	color: #fff;
+	font-size: 0px;
+}
+
+input[type=submit] {
+    background:#ddd; 
+    border:0 none;
+    cursor:pointer;
+	height: 2em;
+}
+#style {
+	background: #ddd;
+	border:0 none;
+	cursor: pointer;
+	height: 2em;
+	font-size: 14px;
+	position: static;
+	margin-top: 1em;
+	float: right;
+	width: 2.5em;
+	background-image: url("day.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	color: transparent;
+}
+#sound {
+	background: #ddd;
+	color: transparent;
+	border: 0px none;
+	margin-right: 0.5em;
+	cursor: pointer;
+	height: 2em;
+	font-size: 14px;
+	position: static;
+	margin-top: 1em;
+	width: 2.5em;
+	background-image: url("speaker1.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	float: right;
+}
+#flash {
+	background: #ddd;
+	color: transparent;
+	border: 0px none;
+	margin-right: 0.5em;
+	cursor: pointer;
+	height: 2em;
+	font-size: 14px;
+	position: static;
+	margin-top: 1em;
+	width: 2.5em;
+	background-image: url("flash-on.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	float: right;
+}
+#time {
+	color: #bbb;
+	font-size: 14px;
+}

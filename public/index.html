@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<!--Webchat basierend auf Node.js
+    basierend auf https://github.com/nodecode/Node.js-Chat
+    jetzt in geil
+    
+    @author Alexander Ochs, http://noxmiles.de
+    
+    + + LICENCES + +
+    Notification Sound:
+    https://notificationsounds.com/notification-sounds/you-wouldnt-believe-510
+    Licensed under the Creative Commons Attribution Licensed
+    
+    Icons from www.flaticon.com
+    flash by 'freepik' http://www.flaticon.com/packs/photography-skills
+    speaker by 'Madebyoliver' http://www.flaticon.com/packs/essential-set-2
+    sun/moon by 'Vectors Market' http://www.flaticon.com/packs/weather-elements -->
+
+<head>
+    <title>Node.js Chat</title>
+    <meta charset="utf-8">
+    <link id="myCSS" rel="stylesheet" href="style-light.css" />
+    <script src="socket.io/socket.io.js"></script>
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="client.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+</head>
+
+<body>
+    <header>Node.js Chat</header>
+    <ul id="content"></ul>
+    <footer>
+        <input id="name" type="text" placeholder="Dein Name" maxlength="20" size="14" />
+        <input id="text" type="text" placeholder="schreibe etwas..." maxlength="1000" size="25" />
+        <input id="senden" type="submit" value="senden" />
+        <button id="style" onclick="styler()" title="Theme">.</button>
+        <button id="sound" onclick="soundSwitcher()" title="Sound-Benachrichtigung">1</button>
+        <button id="flash" onclick="flasher()" title="Tab-Benachrichtigung">1</button>
+    </footer>
+
+    <script>
+    
+    function flasher() {
+        if(document.getElementById("flash").textContent == "1") {
+            document.getElementById("flash").style.background = "#ddd url('flash-off.png') no-repeat center";
+            document.getElementById("flash").textContent = "0";
+            document.cookie = "flash=0";
+        } else {
+            document.getElementById("flash").style.background = "#ddd url('flash-on.png') no-repeat center";
+            document.getElementById("flash").textContent = "1";
+            document.cookie = "flash=1";
+        }
+    }
+
+    function styler() {
+        var hreff;
+        if(document.getElementById("myCSS").href.search("style-light.css") != -1) {
+            hreff="style-dark.css";
+            document.getElementById("style").style.background = "#ddd url('night.png') no-repeat center";
+            document.cookie = "style=dark";
+        } else {
+            hreff = "style-light.css";
+            document.getElementById("style").style.background = "#ddd url('day.png') no-repeat center";
+            document.cookie = "style=light";
+        }
+        document.getElementById("myCSS").href = hreff;
+    };
+
+    // off: 0, on: 1, 1m: 60, 5m: 5, 10m: 10, 30m: 30
+    function soundSwitcher() {
+        switch(document.getElementById("sound").textContent) {
+            case "0": document.getElementById("sound").style.background = "#ddd url('speaker1.png') no-repeat center";
+            document.getElementById("sound").textContent = "1";
+            document.cookie = "sound=1";
+            break;
+            case "1": document.getElementById("sound").style.background = "#ddd url('speaker60.png') no-repeat center";
+            document.getElementById("sound").textContent = "60";
+            document.cookie = "sound=60"; 
+            break;
+            case "60": document.getElementById("sound").style.background = "#ddd url('speaker5.png') no-repeat center";
+            document.getElementById("sound").textContent = "5";
+            document.cookie = "sound=5"; 
+            break;
+            case "5": document.getElementById("sound").style.background = "#ddd url('speaker10.png') no-repeat center";
+            document.getElementById("sound").textContent = "10";
+            document.cookie = "sound=10"; 
+            break;
+            case "10": document.getElementById("sound").style.background = "#ddd url('speaker30.png') no-repeat center";
+            document.getElementById("sound").textContent = "30";
+            document.cookie = "sound=30"; 
+            break;
+            case "30": document.getElementById("sound").style.background = "#ddd url('speaker0.png') no-repeat center";
+            document.getElementById("sound").textContent = "0";
+            document.cookie = "sound=0"; 
+            break;
+            default: alert(document.getElementById("sound").textContent);
+        }
+    };
+</script>
+</body>
+
+</html>
