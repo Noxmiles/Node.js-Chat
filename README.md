@@ -10,7 +10,7 @@
 
 **Install:**
 - Install Node.js and npm.
-- Type npm install.
+- Type _npm install_.
 
 **Run:**
-- Type node server.js
+- Type _node server.js_
