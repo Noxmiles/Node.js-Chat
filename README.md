@@ -14,3 +14,5 @@
 
 **Run:**
 - Type _node server.js_
+
+Based on https://github.com/nodecode/Node.js-Chat respectively http://nodecode.de/chat-nodejs-websocket.
